@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@scp/api-services/identity": ["libs/api-interfaces/identity/src/index.ts"],
+      "@scp/translate/transloco": ["libs/translate/transloco/src/index.ts"],
+      "@scp/core/angular": ["libs/core/angular/core/src/index.ts"],
+      "@scp/environment/dashboard/*":["apps/dashboard/src/environments/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

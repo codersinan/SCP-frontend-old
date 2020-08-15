@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+
+  <style>
+    .cssload-container *,
+    .cssload-container *:before,
+    .cssload-container *:after {
+      box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .cssload-container {
+      width: 50vw;
+      height: 50vh;
+    }
+
+    .cssload-container>div {
+      background: rgb(185, 108, 255);
+      height: 100%;
+      width: 29px;
+      margin-right: 6px;
+      display: inline-block;
+    }
+
+    .cssload-container>div {
+      background: transparent;
+      border: 47px solid transparent;
+      border-color: rgb(185, 108, 255) transparent;
+      border-radius: 100%;
+      -o-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate"("-50%, -50%")";
+      -o-transform: translate"("-50%, -50%")";
+      -ms-transform: translate"("-50%, -50%")";
+      -webkit-transform: translate"("-50%, -50%")";
+      -moz-transform: translate"("-50%, -50%")";
+      transform: translate(-50%, -50%) rotate(0);
+      -o-transform: translate(-50%, -50%) rotate(0);
+      -ms-transform: translate(-50%, -50%) rotate(0);
+      -webkit-transform: translate(-50%, -50%) rotate(0);
+      -moz-transform: translate(-50%, -50%) rotate(0);
+      animation: cssload-wave 2.3s infinite ease-in-out;
+      -o-animation: cssload-wave 2.3s infinite ease-in-out;
+      -ms-animation: cssload-wave 2.3s infinite ease-in-out;
+      -webkit-animation: cssload-wave 2.3s infinite ease-in-out;
+      -moz-animation: cssload-wave 2.3s infinite ease-in-out;
+    }
+
+    .cssload-container .cssload-shaft1 {
+      animation-delay: 0.12s;
+      -o-animation-delay: 0.12s;
+      -ms-animation-delay: 0.12s;
+      -webkit-animation-delay: 0.12s;
+      -moz-animation-delay: 0.12s;
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .cssload-container .cssload-shaft2 {
+      animation-delay: 0.23s;
+      -o-animation-delay: 0.23s;
+      -ms-animation-delay: 0.23s;
+      -webkit-animation-delay: 0.23s;
+      -moz-animation-delay: 0.23s;
+      width: 7rem;
+      height: 7rem;
+    }
+
+    .cssload-container .cssload-shaft3 {
+      animation-delay: 0.35s;
+      -o-animation-delay: 0.35s;
+      -ms-animation-delay: 0.35s;
+      -webkit-animation-delay: 0.35s;
+      -moz-animation-delay: 0.35s;
+      width: 9rem;
+      height: 9rem;
+    }
+
+    .cssload-container .cssload-shaft4 {
+      animation-delay: 0.46s;
+      -o-animation-delay: 0.46s;
+      -ms-animation-delay: 0.46s;
+      -webkit-animation-delay: 0.46s;
+      -moz-animation-delay: 0.46s;
+      width: 11rem;
+      height: 11rem;
+    }
+
+    .cssload-container .cssload-shaft5 {
+      animation-delay: 0.58s;
+      -o-animation-delay: 0.58s;
+      -ms-animation-delay: 0.58s;
+      -webkit-animation-delay: 0.58s;
+      -moz-animation-delay: 0.58s;
+      width: 13rem;
+      height: 13rem;
+    }
+
+    .cssload-container .cssload-shaft6 {
+      animation-delay: 0.69s;
+      -o-animation-delay: 0.69s;
+      -ms-animation-delay: 0.69s;
+      -webkit-animation-delay: 0.69s;
+      -moz-animation-delay: 0.69s;
+      width: 15rem;
+      height: 15rem;
+    }
+
+    .cssload-container .cssload-shaft7 {
+      animation-delay: 0.81s;
+      -o-animation-delay: 0.81s;
+      -ms-animation-delay: 0.81s;
+      -webkit-animation-delay: 0.81s;
+      -moz-animation-delay: 0.81s;
+      width: 17rem;
+      height: 17rem;
+    }
+
+    .cssload-container .cssload-shaft8 {
+      animation-delay: 0.92s;
+      -o-animation-delay: 0.92s;
+      -ms-animation-delay: 0.92s;
+      -webkit-animation-delay: 0.92s;
+      -moz-animation-delay: 0.92s;
+      width: 19rem;
+      height: 19rem;
+    }
+
+    .cssload-container .cssload-shaft9 {
+      animation-delay: 1.04s;
+      -o-animation-delay: 1.04s;
+      -ms-animation-delay: 1.04s;
+      -webkit-animation-delay: 1.04s;
+      -moz-animation-delay: 1.04s;
+      width: 21rem;
+      height: 21rem;
+    }
+
+    .cssload-container .cssload-shaft10 {
+      animation-delay: 1.15s;
+      -o-animation-delay: 1.15s;
+      -ms-animation-delay: 1.15s;
+      -webkit-animation-delay: 1.15s;
+      -moz-animation-delay: 1.15s;
+      width: 23rem;
+      height: 23rem;
+    }
+
+    @keyframes cssload-wave {
+      50% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        border-color: rgb(86, 215, 198) transparent;
+      }
+    }
+
+    @-o-keyframes cssload-wave {
+      50% {
+        -o-transform: translate(-50%, -50%) rotate(360deg);
+        border-color: rgb(86, 215, 198) transparent;
+      }
+    }
+
+    @-ms-keyframes cssload-wave {
+      50% {
+        -ms-transform: translate(-50%, -50%) rotate(360deg);
+        border-color: rgb(86, 215, 198) transparent;
+      }
+    }
+
+    @-webkit-keyframes cssload-wave {
+      50% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+        border-color: rgb(86, 215, 198) transparent;
+      }
+    }
+
+    @-moz-keyframes cssload-wave {
+      50% {
+        -moz-transform: translate(-50%, -50%) rotate(360deg);
+        border-color: rgb(86, 215, 198) transparent;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <dashboard-root>
+    <div class="cssload-container">
+      <div class="cssload-shaft1"></div>
+      <div class="cssload-shaft2"></div>
+      <div class="cssload-shaft3"></div>
+      <div class="cssload-shaft4"></div>
+      <div class="cssload-shaft5"></div>
+      <div class="cssload-shaft6"></div>
+      <div class="cssload-shaft7"></div>
+      <div class="cssload-shaft8"></div>
+      <div class="cssload-shaft9"></div>
+      <div class="cssload-shaft10"></div>
+    </div>
+  </dashboard-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+
+</html>

@@ -21,5 +21,22 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "dashboard": {
+      "tags": ["scp", "dashboard"]
+    },
+    "dashboard-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dashboard"]
+    },
+    "api-interfaces-identity": {
+      "tags": ["scp","api-services", "identity"]
+    },
+    "translate-transloco": {
+      "tags": ["scp", "translate", "transloco"]
+    },
+    "core-angular-core": {
+      "tags": ["scp", "core"]
+    }
+  }
 }
