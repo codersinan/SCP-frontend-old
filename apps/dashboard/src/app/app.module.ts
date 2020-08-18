@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from "./app-routing.module";
+
+import { OAuthModule } from "angular-oauth2-oidc";
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -20,6 +23,8 @@ import { AppRoutingModule } from "./app-routing.module";
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
+    HttpClientModule,
+    OAuthModule.forRoot(),
     RouterModule,
   ],
   providers: [],

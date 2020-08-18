@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OAuthService, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'dashboard-welcome',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: OAuthService) {
+    authService.initLoginFlow();
+  }
 
   ngOnInit(): void {
+    // this.authService.initLoginFlow()
   }
 
 }
