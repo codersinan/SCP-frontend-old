@@ -36,16 +36,19 @@
       "tags": ["scp", "translate", "transloco"]
     },
     "core-angular-core": {
-      "tags": ["scp", "core","angular"]
+      "tags": ["scp", "core", "angular"]
     },
     "shared-assets": {
-      "tags": ["scp","assets","svg"]
+      "tags": ["scp", "assets", "svg"]
     },
     "ui-angular-header": {
       "tags": ["scp", "ui", "angular", "header"]
     },
     "ui-angular-footer": {
       "tags": ["scp", "ui", "angular", "footer"]
+    },
+    "shared-animations": {
+      "tags": ["scp", "shared", "angular", "animations"]
     }
   }
 }

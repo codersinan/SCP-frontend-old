@@ -24,7 +24,8 @@
       "@scp/environment/dashboard/*": ["apps/dashboard/src/environments/*"],
       "@scp/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@scp/ui/angular/header": ["libs/ui/angular/header/src/index.ts"],
-      "@scp/ui/angular/footer": ["libs/ui/angular/footer/src/index.ts"]
+      "@scp/ui/angular/footer": ["libs/ui/angular/footer/src/index.ts"],
+      "@scp/shared/animations": ["libs/shared/animations/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

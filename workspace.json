@@ -365,6 +365,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-animations": {
+      "projectType": "library",
+      "root": "libs/shared/animations",
+      "sourceRoot": "libs/shared/animations/src",
+      "prefix": "scp-frontend",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/animations/tsconfig.lib.json",
+              "libs/shared/animations/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/animations/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/animations/jest.config.js",
+            "tsConfig": "libs/shared/animations/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/animations/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -381,8 +414,8 @@
       "style": "scss",
       "linter": "eslint"
     },
-    "@schematics/angular:component":{
-      "style":"scss"
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "dashboard"
