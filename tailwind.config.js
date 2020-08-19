@@ -10,4 +10,7 @@ module.exports = {
     backgroundColor: ['responsive','hover','focus', 'active']
   },
   plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };

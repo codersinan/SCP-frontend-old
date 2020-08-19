@@ -5,10 +5,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { TranslateModule } from '@scp/translate/transloco';
-import { UiHeaderModule } from "@scp/ui/angular/header";
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent, pathMatch: 'full' }
+  {
+    path: '', component: LayoutComponent,
+    children: [
+      { path: '', redirectTo: 'welcome',pathMatch:'full'},
+      { path: 'welcome', component: WelcomeComponent }
+    ]
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('@scp/layout/ui/angular/auth').then(m => m.AuthModule)
+  }
 ];
 
 @NgModule({
@@ -16,9 +26,11 @@ const routes: Routes = [
     CommonModule,
     TranslateModule,
     RouterModule.forRoot(routes),
-    UiHeaderModule,
   ],
   exports: [RouterModule],
-  declarations: [WelcomeComponent],
+  declarations: [
+    LayoutComponent,
+    WelcomeComponent
+  ],
 })
 export class AppRoutingModule { }

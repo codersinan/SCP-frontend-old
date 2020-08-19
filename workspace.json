@@ -31,7 +31,7 @@
               {
                 "input": "libs/shared/assets/src/lib/svg",
                 "glob": "*.svg",
-                "output": "assets"
+                "output": "assets/svg"
               }
             ],
             "styles": ["apps/dashboard/src/styles.scss"],
@@ -240,39 +240,6 @@
         }
       }
     },
-    "core-angular-core": {
-      "projectType": "library",
-      "root": "libs/core/angular/core",
-      "sourceRoot": "libs/core/angular/core/src",
-      "prefix": "core",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "tsConfig": [
-              "libs/core/angular/core/tsconfig.lib.json",
-              "libs/core/angular/core/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/core/angular/core/**/*"],
-            "linter": "eslint"
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/core/angular/core/jest.config.js",
-            "tsConfig": "libs/core/angular/core/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/core/angular/core/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-assets": {
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets/src",
@@ -300,30 +267,30 @@
         }
       }
     },
-    "ui-angular-header": {
+    "core-angular": {
       "projectType": "library",
-      "root": "libs/ui/angular/header",
-      "sourceRoot": "libs/ui/angular/header/src",
-      "prefix": "ui",
+      "root": "libs/core/angular",
+      "sourceRoot": "libs/core/angular/src",
+      "prefix": "core",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
             "tsConfig": [
-              "libs/ui/angular/header/tsconfig.lib.json",
-              "libs/ui/angular/header/tsconfig.spec.json"
+              "libs/core/angular/tsconfig.lib.json",
+              "libs/core/angular/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/angular/header/**/*"],
+            "exclude": ["**/node_modules/**", "!libs/core/angular/**/*"],
             "linter": "eslint"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/angular/header/jest.config.js",
-            "tsConfig": "libs/ui/angular/header/tsconfig.spec.json",
+            "jestConfig": "libs/core/angular/jest.config.js",
+            "tsConfig": "libs/core/angular/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/ui/angular/header/src/test-setup.ts"
+            "setupFile": "libs/core/angular/src/test-setup.ts"
           }
         }
       },
@@ -333,30 +300,33 @@
         }
       }
     },
-    "ui-angular-footer": {
+    "shared-animations-angular": {
       "projectType": "library",
-      "root": "libs/ui/angular/footer",
-      "sourceRoot": "libs/ui/angular/footer/src",
-      "prefix": "ui",
+      "root": "libs/shared/animations/angular",
+      "sourceRoot": "libs/shared/animations/angular/src",
+      "prefix": "animation",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
             "tsConfig": [
-              "libs/ui/angular/footer/tsconfig.lib.json",
-              "libs/ui/angular/footer/tsconfig.spec.json"
+              "libs/shared/animations/angular/tsconfig.lib.json",
+              "libs/shared/animations/angular/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/angular/footer/**/*"],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/animations/angular/**/*"
+            ],
             "linter": "eslint"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/angular/footer/jest.config.js",
-            "tsConfig": "libs/ui/angular/footer/tsconfig.spec.json",
+            "jestConfig": "libs/shared/animations/angular/jest.config.js",
+            "tsConfig": "libs/shared/animations/angular/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/ui/angular/footer/src/test-setup.ts"
+            "setupFile": "libs/shared/animations/angular/src/test-setup.ts"
           }
         }
       },
@@ -366,30 +336,69 @@
         }
       }
     },
-    "shared-animations": {
+    "layout-ui-angular-auth": {
       "projectType": "library",
-      "root": "libs/shared/animations",
-      "sourceRoot": "libs/shared/animations/src",
-      "prefix": "scp-frontend",
+      "root": "libs/layout/ui/angular/auth",
+      "sourceRoot": "libs/layout/ui/angular/auth/src",
+      "prefix": "auth",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:lint",
           "options": {
             "tsConfig": [
-              "libs/shared/animations/tsconfig.lib.json",
-              "libs/shared/animations/tsconfig.spec.json"
+              "libs/layout/ui/angular/auth/tsconfig.lib.json",
+              "libs/layout/ui/angular/auth/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/animations/**/*"],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/layout/ui/angular/auth/**/*"
+            ],
             "linter": "eslint"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/animations/jest.config.js",
-            "tsConfig": "libs/shared/animations/tsconfig.spec.json",
+            "jestConfig": "libs/layout/ui/angular/auth/jest.config.js",
+            "tsConfig": "libs/layout/ui/angular/auth/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/shared/animations/src/test-setup.ts"
+            "setupFile": "libs/layout/ui/angular/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "layout-ui-angular-dashboard": {
+      "projectType": "library",
+      "root": "libs/layout/ui/angular/dashboard",
+      "sourceRoot": "libs/layout/ui/angular/dashboard/src",
+      "prefix": "dashboard",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/layout/ui/angular/dashboard/tsconfig.lib.json",
+              "libs/layout/ui/angular/dashboard/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/layout/ui/angular/dashboard/**/*"
+            ],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/layout/ui/angular/dashboard/jest.config.js",
+            "tsConfig": "libs/layout/ui/angular/dashboard/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/layout/ui/angular/dashboard/src/test-setup.ts"
           }
         }
       },
@@ -412,7 +421,8 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "jest",
       "style": "scss",
-      "linter": "eslint"
+      "linter": "eslint",
+      "simpleModuleName": true
     },
     "@schematics/angular:component": {
       "style": "scss"

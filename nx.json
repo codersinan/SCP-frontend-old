@@ -35,20 +35,20 @@
     "translate-transloco": {
       "tags": ["scp", "translate", "transloco"]
     },
-    "core-angular-core": {
-      "tags": ["scp", "core", "angular"]
-    },
     "shared-assets": {
       "tags": ["scp", "assets", "svg"]
     },
-    "ui-angular-header": {
-      "tags": ["scp", "ui", "angular", "header"]
+    "core-angular": {
+      "tags": ["scp", "core", "angular"]
     },
-    "ui-angular-footer": {
-      "tags": ["scp", "ui", "angular", "footer"]
+    "shared-animations-angular": {
+      "tags": ["scp", "shared", "animations", "angular"]
     },
-    "shared-animations": {
-      "tags": ["scp", "shared", "angular", "animations"]
+    "layout-ui-angular-auth": {
+      "tags": ["scp", "layout", "ui", "angular", "auth"]
+    },
+    "layout-ui-angular-dashboard": {
+      "tags": ["scp", "layout", "ui", "angular", "dashboard"]
     }
   }
 }

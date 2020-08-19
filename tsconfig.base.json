@@ -10,23 +10,45 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@scp/environment/dashboard/*": [
+        "apps/dashboard/src/environments/*"
+      ],
       "@scp/api-services/identity": [
         "libs/api-interfaces/identity/src/index.ts"
       ],
-      "@scp/translate/transloco": ["libs/translate/transloco/src/index.ts"],
-      "@scp/core/angular": ["libs/core/angular/core/src/index.ts"],
-      "@scp/environment/dashboard/*": ["apps/dashboard/src/environments/*"],
-      "@scp/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@scp/ui/angular/header": ["libs/ui/angular/header/src/index.ts"],
-      "@scp/ui/angular/footer": ["libs/ui/angular/footer/src/index.ts"],
-      "@scp/shared/animations": ["libs/shared/animations/src/index.ts"]
+      "@scp/translate/transloco": [
+        "libs/translate/transloco/src/index.ts"
+      ],
+      "@scp/shared/assets": [
+        "libs/shared/assets/src/index.ts"
+      ],
+      "@scp/core/angular": [
+        "libs/core/angular/src/index.ts"
+      ],
+      "@scp/shared/animations/angular": [
+        "libs/shared/animations/angular/src/index.ts"
+      ],
+      "@scp/layout/ui/angular/auth": [
+        "libs/layout/ui/angular/auth/src/index.ts"
+      ],
+      "@scp/layout/ui/angular/dashboard": [
+        "libs/layout/ui/angular/dashboard/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

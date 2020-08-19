@@ -9,9 +9,9 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class AppComponent {
   constructor(
-    private swUpdate: SwUpdate,
-    private translocoService: TranslocoService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    swUpdate: SwUpdate,
+    translocoService: TranslocoService,
+    @Inject(PLATFORM_ID) platformId
   ) {
     if (platformId === 'browser') {
       let language = localStorage.getItem('lang');
