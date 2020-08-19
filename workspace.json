@@ -13,7 +13,7 @@
       "prefix": "dashboard",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/dashboard/browser",
             "index": "apps/dashboard/src/index.html",
@@ -21,24 +21,22 @@
             "polyfills": "apps/dashboard/src/polyfills.ts",
             "tsConfig": "apps/dashboard/tsconfig.app.json",
             "aot": true,
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "assets": [
               "apps/dashboard/src/favicon.ico",
               "apps/dashboard/src/assets",
               "apps/dashboard/src/manifest.webmanifest",
               {
-                "glob": "**/*",
-                "input": "node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
+                "input": "libs/shared/assets/src/lib/svg",
+                "glob": "*.svg",
+                "output": "assets"
               }
             ],
-            "styles": [
-              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "apps/dashboard/src/styles.scss"
-            ],
+            "styles": ["apps/dashboard/src/styles.scss"],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "flat"
-            ]
+            "allowedCommonJsDependencies": ["flat"]
           },
           "configurations": {
             "production": {
@@ -74,9 +72,12 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "dashboard:build"
+            "browserTarget": "dashboard:build",
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -271,6 +272,99 @@
           "style": "scss"
         }
       }
+    },
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/shared/assets/tsconfig.lib.json",
+              "libs/shared/assets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/assets/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/assets/jest.config.js",
+            "tsConfig": "libs/shared/assets/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-angular-header": {
+      "projectType": "library",
+      "root": "libs/ui/angular/header",
+      "sourceRoot": "libs/ui/angular/header/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/angular/header/tsconfig.lib.json",
+              "libs/ui/angular/header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/angular/header/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/angular/header/jest.config.js",
+            "tsConfig": "libs/ui/angular/header/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui/angular/header/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-angular-footer": {
+      "projectType": "library",
+      "root": "libs/ui/angular/footer",
+      "sourceRoot": "libs/ui/angular/footer/src",
+      "prefix": "ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/angular/footer/tsconfig.lib.json",
+              "libs/ui/angular/footer/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/angular/footer/**/*"],
+            "linter": "eslint"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/angular/footer/jest.config.js",
+            "tsConfig": "libs/ui/angular/footer/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui/angular/footer/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -286,6 +380,9 @@
       "unitTestRunner": "jest",
       "style": "scss",
       "linter": "eslint"
+    },
+    "@schematics/angular:component":{
+      "style":"scss"
     }
   },
   "defaultProject": "dashboard"

@@ -30,13 +30,22 @@
       "implicitDependencies": ["dashboard"]
     },
     "api-interfaces-identity": {
-      "tags": ["scp","api-services", "identity"]
+      "tags": ["scp", "api-services", "identity"]
     },
     "translate-transloco": {
       "tags": ["scp", "translate", "transloco"]
     },
     "core-angular-core": {
-      "tags": ["scp", "core"]
+      "tags": ["scp", "core","angular"]
+    },
+    "shared-assets": {
+      "tags": ["scp","assets","svg"]
+    },
+    "ui-angular-header": {
+      "tags": ["scp", "ui", "angular", "header"]
+    },
+    "ui-angular-footer": {
+      "tags": ["scp", "ui", "angular", "footer"]
     }
   }
 }
